@@ -9,6 +9,11 @@ export interface OptionChoice {
 }
 export type Options = Record<string, OptionChoice[]>;
 
+export interface NutritionInfo {
+  name: string;
+  value: string;
+}
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -26,15 +31,15 @@ export interface MenuItem {
   categoryId: string;
   calories: number;
   preparationTime: number;
-  additionalImages: string[];
-  reviewCount: number;
-  rating: number;
-  description: string;
-  chefNote: string;
-  nutritionInfo: Record<"name" | "value", string>[];
+  additionalImages?: string[];
+  reviewCount?: number;
+  rating?: number;
+  description?: string;
+  chefNote?: string;
+  nutritionInfo?: NutritionInfo[]; // ✅ corrected this line
   options?: Options;
   dietary?: string[];
   spicyLevel?: number;
-  isChefSpecial: boolean;
+  isChefSpecial?: boolean;
   winePairing?: string;
 }

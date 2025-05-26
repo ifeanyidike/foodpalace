@@ -233,7 +233,9 @@ const MenuItemModal: React.FC<MenuItemModalProps> = ({
                   <svg
                     key={star}
                     className={`w-5 h-5 ${
-                      star <= item.rating ? "text-amber-400" : "text-gray-300"
+                      star <= (item.rating || 0)
+                        ? "text-amber-400"
+                        : "text-gray-300"
                     }`}
                     fill="currentColor"
                     viewBox="0 0 20 20"

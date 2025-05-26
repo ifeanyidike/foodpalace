@@ -577,7 +577,9 @@ const Menu: React.FC = () => {
                       <FaStar
                         key={i}
                         className={`${
-                          i < item.rating ? "text-amber-400" : "text-gray-300"
+                          i < (item.rating || 0)
+                            ? "text-amber-400"
+                            : "text-gray-300"
                         } w-4 h-4`}
                       />
                     ))}
