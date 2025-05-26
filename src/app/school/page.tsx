@@ -22,16 +22,15 @@ import {
   Timer,
   CreditCard,
   X,
-  Mail,
   Check,
   Pause,
-  Gift,
   Shield,
   MessageCircle,
   Video,
-  Utensils,
   GraduationCap,
   Home,
+  ChefHat,
+  Target,
 } from "lucide-react";
 
 interface CulinaryClass {
@@ -63,6 +62,7 @@ interface CulinaryClass {
     image: string;
     difficulty: string;
     description: string;
+    category: string;
   }[];
   schedule: {
     startDate: string;
@@ -89,13 +89,13 @@ interface CulinaryClass {
 }
 
 const masterClass: CulinaryClass = {
-  id: "master-nigerian-cuisine",
-  title: "Master Nigerian Cuisine",
-  subtitle: "From Traditional Roots to Modern Excellence",
+  id: "master-global-cuisine",
+  title: "Master Global Cuisine",
+  subtitle: "Continental, Intercontinental & Nigerian Delicacies",
   description:
-    "Transform your culinary skills with authentic Nigerian techniques and flavors in our exclusive 6-week masterclass.",
+    "Transform your culinary skills with authentic techniques from around the world in our exclusive 6-week masterclass.",
   longDescription:
-    "Join Chef Favvy in an immersive culinary journey that combines traditional Nigerian cooking methods with modern techniques. This intensive program is designed for passionate home cooks who want to master the art of Nigerian cuisine.",
+    "Join Chef Favvy in an immersive culinary journey that spans continents. This intensive program is designed for passionate home cooks who want to master diverse cooking techniques and flavors from Nigerian classics to continental masterpieces.",
   duration: "6 weeks",
   price: 200000,
   originalPrice: 250000,
@@ -106,19 +106,19 @@ const masterClass: CulinaryClass = {
     "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
   instructor: {
     name: "Chef Favvy Dike",
-    title: "Master Chef & Cultural Curator",
+    title: "Master Chef & Culinary Artist",
     image:
       "https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    bio: "With over 15 years of culinary expertise spanning from Lagos to London, Chef Favvy has dedicated her career to preserving and elevating Nigerian cuisine. Featured in Bon Appétit and winner of the African Culinary Excellence Award.",
+    bio: "With over 15 years of culinary expertise spanning from Lagos to London, Chef Favvy has dedicated her career to mastering and teaching diverse global cuisines. Featured in major culinary publications and winner of multiple cooking awards.",
     experience: "15+ years",
     specialties: [
-      "Nigerian Traditional Cuisine",
-      "Modern African Fusion",
-      "Spice Blending",
-      "Cultural Food History",
+      "Global Cuisine Mastery",
+      "Continental Cooking",
+      "Nigerian Traditional Dishes",
+      "Modern Fusion Techniques",
     ],
     awards: [
-      "African Culinary Excellence Award 2023",
+      "Culinary Excellence Award 2023",
       "Featured in Bon Appétit Magazine",
       "Lagos Food Festival Champion",
     ],
@@ -130,61 +130,68 @@ const masterClass: CulinaryClass = {
     {
       name: "Perfect Jollof Rice",
       image:
-        "https://images.unsplash.com/photo-1604329760661-e71dc83f8d26?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1665332195309-9d75071138f0?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       difficulty: "Intermediate",
       description:
         "Master the art of creating the perfect party jollof with smoky undertones and perfectly balanced spices",
+      category: "Nigerian",
     },
     {
-      name: "Authentic Pepper Soup",
+      name: "Classic Beef Bourguignon",
       image:
-        "https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      difficulty: "Beginner",
+        "https://plus.unsplash.com/premium_photo-1726761709221-06117b8d905a?q=80&w=4162&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      difficulty: "Advanced",
       description:
-        "Learn the secrets of traditional pepper soup with native spices and medicinal herbs",
+        "Learn the traditional French technique for this wine-braised beef masterpiece",
+      category: "Continental",
     },
     {
-      name: "Restaurant-Style Suya",
+      name: "Restaurant-Style Pasta Carbonara",
       image:
-        "https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       difficulty: "Intermediate",
       description:
-        "Create the perfect suya spice blend and grilling techniques for tender, flavorful meat",
+        "Perfect the authentic Italian technique without cream, just eggs, cheese, and timing",
+      category: "Continental",
     },
     {
-      name: "Egusi Soup Mastery",
+      name: "Authentic Thai Pad Thai",
       image:
-        "https://images.unsplash.com/photo-1604329760661-e71dc83f8d26?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1637806930600-37fa8892069d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      difficulty: "Intermediate",
+      description:
+        "Master the balance of sweet, sour, and savory in this iconic Thai street food",
+      category: "Intercontinental",
+    },
+    {
+      name: "Perfect Egusi Soup",
+      image:
+        "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       difficulty: "Advanced",
       description:
         "Perfect the technique for smooth, rich egusi with properly balanced proteins and vegetables",
+      category: "Nigerian",
     },
     {
-      name: "Fluffy Pounded Yam",
+      name: "Classic French Ratatouille",
       image:
-        "https://images.unsplash.com/photo-1596040033229-a29b084898ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1572453800999-e8d2d1589b7c?q=80&w=4370&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       difficulty: "Beginner",
       description:
-        "Master the traditional technique for smooth, stretchy pounded yam",
-    },
-    {
-      name: "Crispy Plantain Perfection",
-      image:
-        "https://images.unsplash.com/photo-1596040033229-a29b084898ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      difficulty: "Beginner",
-      description: "Learn various plantain preparations from sweet to savory",
+        "Learn the traditional and modern presentations of this Provençal vegetable medley",
+      category: "Continental",
     },
   ],
   schedule: {
     startDate: "March 15, 2024",
     endDate: "April 26, 2024",
     sessions: [
-      "Week 1: Foundations & Rice",
-      "Week 2: Soups & Stews",
-      "Week 3: Proteins & Grilling",
-      "Week 4: Sides & Vegetables",
-      "Week 5: Advanced Techniques",
-      "Week 6: Menu Planning & Presentation",
+      "Week 1: Foundations & Knife Skills",
+      "Week 2: Nigerian Classics",
+      "Week 3: Continental Mastery",
+      "Week 4: Intercontinental Favorites",
+      "Week 5: Advanced Techniques & Fusion",
+      "Week 6: Practical Assessment & Presentation",
     ],
     time: "Saturdays, 10:00 AM - 3:00 PM",
     location: "Food Palace Culinary School, SARS Road Port Harcourt",
@@ -198,22 +205,10 @@ const masterClass: CulinaryClass = {
       highlight: true,
     },
     {
-      icon: Utensils,
-      title: "All Ingredients & Equipment",
-      description:
-        "Premium ingredients and professional tools provided for every session",
-    },
-    {
       icon: BookOpen,
       title: "Digital Recipe Collection",
       description:
-        "30+ authentic recipes with step-by-step instructions and video guides",
-    },
-    {
-      icon: Gift,
-      title: "Take-Home Spice Kit",
-      description:
-        "Curated selection of traditional Nigerian spices and seasonings",
+        "30+ authentic recipes with step-by-step instructions and techniques",
     },
     {
       icon: GraduationCap,
@@ -225,7 +220,7 @@ const masterClass: CulinaryClass = {
       icon: MessageCircle,
       title: "Private WhatsApp Community",
       description:
-        "Lifetime access to exclusive community with fellow students and Chef Favvy",
+        "Access to exclusive community with fellow students and Chef Favvy",
     },
     {
       icon: Video,
@@ -233,16 +228,22 @@ const masterClass: CulinaryClass = {
       description: "Access to recorded sessions and technique demonstrations",
     },
     {
-      icon: Mail,
-      title: "Lifetime Email Support",
+      icon: Target,
+      title: "Practical Assessments",
       description:
-        "Get answers to your cooking questions directly from Chef Favvy",
+        "Hands-on evaluations to ensure you master each technique perfectly",
     },
     {
       icon: Trophy,
       title: "20% Off Future Classes",
       description:
         "Exclusive discount on all upcoming masterclasses and workshops",
+    },
+    {
+      icon: ChefHat,
+      title: "Professional Techniques",
+      description:
+        "Learn knife skills, plating, and presentation like a professional chef",
     },
   ],
   reviews: [
@@ -252,7 +253,7 @@ const masterClass: CulinaryClass = {
         "https://images.unsplash.com/photo-1494790108755-2616b332b02e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
       rating: 5,
       review:
-        "Chef Favvy transformed my cooking completely! I went from burning water to hosting dinner parties. The techniques I learned here are invaluable.",
+        "Chef Favvy transformed my cooking completely! I went from burning water to hosting dinner parties. The variety of cuisines taught here is incredible.",
       date: "2 weeks ago",
     },
     {
@@ -261,7 +262,7 @@ const masterClass: CulinaryClass = {
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
       rating: 5,
       review:
-        "As someone who grew up abroad, this class reconnected me with my roots. Chef Favvy doesn't just teach recipes; she shares culture.",
+        "Learning both Nigerian dishes and international cuisine in one class was amazing. Chef Favvy's expertise spans continents!",
       date: "1 month ago",
     },
     {
@@ -270,7 +271,7 @@ const masterClass: CulinaryClass = {
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
       rating: 5,
       review:
-        "The best investment I've made! The small class size meant personalized attention, and Chef Favvy's passion is infectious.",
+        "The best investment I've made! The small class size meant personalized attention, and the practical assessments really helped me improve.",
       date: "3 weeks ago",
     },
   ],
@@ -283,8 +284,8 @@ const masterClass: CulinaryClass = {
   highlights: [
     "Only 4 spots left at early bird price!",
     "Small class size for personalized attention",
-    "All ingredients & equipment included",
-    "Take-home recipe collection & spice kit",
+    "You bring ingredients, we provide the expertise",
+    "Recipe collection & certificate included",
   ],
 };
 
@@ -303,7 +304,7 @@ const CulinaryMasterclass: React.FC = () => {
     phone: "",
     experience: "",
     paymentMethod: "paystack",
-    enrollmentType: "immediate", // 'immediate' or 'visit'
+    enrollmentType: "immediate",
   });
   const [visitData, setVisitData] = useState({
     name: "",
@@ -406,10 +407,10 @@ const CulinaryMasterclass: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-[family-name:var(--font-urbanist)]">
-      {/* Ultra Premium Hero Section */}
+      {/* Ultra Responsive Hero Section */}
       <section
         ref={heroRef}
-        className="relative h-screen overflow-hidden bg-black"
+        className="relative min-h-screen overflow-hidden bg-black flex flex-col"
       >
         {/* Background Image with Subtle Parallax */}
         <motion.div
@@ -420,14 +421,14 @@ const CulinaryMasterclass: React.FC = () => {
             className="w-full h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${masterClass.heroImage})` }}
           />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/50" />
         </motion.div>
 
         {/* Navigation */}
-        <nav className="relative z-50 flex justify-between items-center px-6 md:px-12 py-8">
+        <nav className="relative z-50 flex justify-between items-center px-4 sm:px-6 lg:px-12 py-4 sm:py-6 lg:py-8">
           <motion.div
-            className="text-xl md:text-2xl font-light text-white tracking-wide"
+            className="text-base sm:text-lg lg:text-xl font-light text-white tracking-wide"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -436,243 +437,249 @@ const CulinaryMasterclass: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="flex items-center gap-2 text-xs md:text-sm text-amber-400 font-medium"
+            className="flex items-center gap-2 text-xs sm:text-sm text-amber-400 font-medium"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-            LIMITED ENROLLMENT
+            <span className="hidden sm:inline">LIMITED</span> ENROLLMENT
           </motion.div>
         </nav>
 
-        {/* Hero Content */}
-        <div className="relative z-40 flex items-center justify-center h-full px-6 md:px-12">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            {/* Left Content - 7 columns */}
-            <motion.div
-              className="lg:col-span-7 text-white space-y-8 md:space-y-12"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-            >
-              {/* Status Badge */}
+        {/* Hero Content - Fully Responsive */}
+        <div className="relative z-40 flex-1 flex items-center px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
+              {/* Left Content - Text */}
               <motion.div
-                className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+                className="xl:col-span-7 text-white space-y-6 sm:space-y-8 lg:space-y-12"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
               >
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
-                  <span className="text-amber-400 text-sm font-medium tracking-wide">
-                    EARLY BIRD SPECIAL
-                  </span>
-                </div>
-                <div className="text-red-400 text-sm font-medium">
-                  Only {masterClass.maxStudents - masterClass.currentStudents}{" "}
-                  spots remaining
-                </div>
-              </motion.div>
-
-              {/* Main Title */}
-              <div className="space-y-4 md:space-y-6">
-                <motion.h1
-                  className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[0.9] tracking-tight"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.7 }}
-                >
-                  Master
-                  <br />
-                  <span className="font-normal">Nigerian</span>
-                  <br />
-                  <span className="text-amber-400 font-light italic">
-                    Cuisine
-                  </span>
-                </motion.h1>
-
-                <motion.p
-                  className="text-lg md:text-xl text-white/80 max-w-lg leading-relaxed font-light"
+                {/* Status Badge */}
+                <motion.div
+                  className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9 }}
+                  transition={{ delay: 0.5 }}
                 >
-                  {masterClass.description}
-                </motion.p>
-              </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+                    <span className="text-amber-400 text-sm font-medium tracking-wide">
+                      EARLY BIRD SPECIAL
+                    </span>
+                  </div>
+                  <div className="text-red-400 text-sm font-medium">
+                    Only {masterClass.maxStudents - masterClass.currentStudents}{" "}
+                    spots remaining
+                  </div>
+                </motion.div>
 
-              {/* Key Features */}
-              <motion.div
-                className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0 }}
-              >
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-light text-amber-400">
-                    {masterClass.duration}
-                  </div>
-                  <div className="text-xs md:text-sm text-white/60">
-                    Intensive Training
-                  </div>
+                {/* Main Title - Responsive Typography */}
+                <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+                  <motion.h1
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[0.9] tracking-tight"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                  >
+                    Master
+                    <br />
+                    <span className="font-normal">Global</span>
+                    <br />
+                    <span className="text-amber-400 font-light italic">
+                      Cuisine
+                    </span>
+                  </motion.h1>
+
+                  <motion.p
+                    className="text-base sm:text-lg lg:text-xl text-white/90 max-w-lg leading-relaxed font-light"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.9 }}
+                  >
+                    {masterClass.description}
+                  </motion.p>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-light text-amber-400">
-                    {masterClass.dishes.length}
+
+                {/* Key Features - Responsive Grid */}
+                <motion.div
+                  className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0 }}
+                >
+                  <div className="text-center">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-light text-amber-400">
+                      {masterClass.duration}
+                    </div>
+                    <div className="text-xs sm:text-sm text-white/60">
+                      Training
+                    </div>
                   </div>
-                  <div className="text-xs md:text-sm text-white/60">
-                    Signature Dishes
+                  <div className="text-center">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-light text-amber-400">
+                      {masterClass.dishes.length}
+                    </div>
+                    <div className="text-xs sm:text-sm text-white/60">
+                      Dishes
+                    </div>
                   </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-light text-amber-400">
-                    {masterClass.maxStudents}
+                  <div className="text-center">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-light text-amber-400">
+                      {masterClass.maxStudents}
+                    </div>
+                    <div className="text-xs sm:text-sm text-white/60">
+                      Max Students
+                    </div>
                   </div>
-                  <div className="text-xs md:text-sm text-white/60">
-                    Max Students
+                  <div className="text-center">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-light text-amber-400">
+                      5.0
+                    </div>
+                    <div className="text-xs sm:text-sm text-white/60">
+                      Rating
+                    </div>
                   </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-light text-amber-400">
-                    5.0
+                </motion.div>
+
+                {/* Price & CTA - Responsive Layout */}
+                <motion.div
+                  className="space-y-6 lg:space-y-8"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1 }}
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4 lg:gap-6">
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-light text-white">
+                      ₦{masterClass.earlyBirdPrice.toLocaleString()}
+                    </div>
+                    <div className="text-lg sm:text-xl lg:text-2xl text-white/40 line-through font-light">
+                      ₦{masterClass.originalPrice.toLocaleString()}
+                    </div>
+                    <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium w-fit">
+                      Save ₦
+                      {(
+                        masterClass.originalPrice - masterClass.earlyBirdPrice
+                      ).toLocaleString()}
+                    </div>
                   </div>
-                  <div className="text-xs md:text-sm text-white/60">
-                    Student Rating
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                    <button
+                      onClick={() => setShowEnrollment(true)}
+                      className="group cursor-pointer px-6 sm:px-8 py-3 sm:py-4 bg-white text-black hover:bg-amber-400 hover:text-black transition-all duration-300 rounded-full font-medium flex items-center gap-3 w-full sm:w-auto justify-center"
+                    >
+                      Enroll Now
+                      <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </button>
+
+                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                      <button
+                        onClick={() => setShowBookVisit(true)}
+                        className="group flex items-center gap-3 text-white/80 hover:text-white transition-colors duration-300 justify-center sm:justify-start"
+                      >
+                        <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-white/40 group-hover:border-white flex items-center justify-center transition-colors duration-300">
+                          <Calendar className="w-4 sm:w-5 h-4 sm:h-5" />
+                        </div>
+                        <span className="font-light">Book a Visit</span>
+                      </button>
+
+                      <button
+                        onClick={() => setShowVideo(true)}
+                        className="group flex items-center gap-3 text-white/80 hover:text-white transition-colors duration-300 justify-center sm:justify-start"
+                      >
+                        <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-white/40 group-hover:border-white flex items-center justify-center transition-colors duration-300">
+                          <Play className="w-4 sm:w-5 h-4 sm:h-5 ml-1" />
+                        </div>
+                        <span className="font-light">Watch Preview</span>
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
 
-              {/* Price & CTA */}
+              {/* Right Info Card - Responsive Position */}
               <motion.div
-                className="space-y-6 md:space-y-8"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1 }}
+                className="xl:col-span-5 order-first xl:order-last"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
               >
-                <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-6">
-                  <div className="text-4xl md:text-5xl font-light text-white">
-                    ₦{masterClass.earlyBirdPrice.toLocaleString()}
-                  </div>
-                  <div className="text-xl md:text-2xl text-white/40 line-through font-light">
-                    ₦{masterClass.originalPrice.toLocaleString()}
-                  </div>
-                  <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Save ₦
-                    {(
-                      masterClass.originalPrice - masterClass.earlyBirdPrice
-                    ).toLocaleString()}
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-                  <button
-                    onClick={() => setShowEnrollment(true)}
-                    className="group cursor-pointer px-6 md:px-8 py-3 md:py-4 bg-white text-black hover:bg-amber-400 hover:text-black transition-all duration-300 rounded-full font-medium flex items-center gap-3 w-full sm:w-auto justify-center"
-                  >
-                    Enroll Now
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
-
-                  <button
-                    onClick={() => setShowBookVisit(true)}
-                    className="group flex items-center gap-3 text-white/80 hover:text-white transition-colors duration-300 w-full sm:w-auto justify-center sm:justify-start"
-                  >
-                    <div className="w-10 cursor-pointer md:w-12 h-10 md:h-12 rounded-full border border-white/40 group-hover:border-white flex items-center justify-center transition-colors duration-300">
-                      <Calendar className="w-4 md:w-5 h-4 md:h-5" />
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 lg:space-y-8">
+                  {/* Instructor */}
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <img
+                      src={masterClass.instructor.image}
+                      alt={masterClass.instructor.name}
+                      className="w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 rounded-full object-cover"
+                    />
+                    <div>
+                      <h3 className="text-base sm:text-lg font-medium text-white">
+                        {masterClass.instructor.name}
+                      </h3>
+                      <p className="text-white/70 text-sm">
+                        {masterClass.instructor.title}
+                      </p>
                     </div>
-                    <span className="font-light">Book a Visit</span>
-                  </button>
+                  </div>
 
-                  <button
-                    onClick={() => setShowVideo(true)}
-                    className="group flex items-center gap-3 text-white/80 hover:text-white transition-colors duration-300 w-full sm:w-auto justify-center sm:justify-start"
-                  >
-                    <div className="w-10 md:w-12 h-10 md:h-12 rounded-full border border-white/40 group-hover:border-white flex items-center justify-center transition-colors duration-300">
-                      <Play className="w-4 md:w-5 h-4 md:h-5 ml-1" />
+                  {/* Limited Time Banner */}
+                  <div className="bg-gradient-to-r from-red-500/20 to-pink-500/20 border border-red-500/30 rounded-2xl p-4 text-center">
+                    <div className="text-red-400 font-bold text-sm mb-1">
+                      ⏰ LIMITED TIME OFFER
                     </div>
-                    <span className="font-light">Watch Preview</span>
-                  </button>
-                </div>
-              </motion.div>
-            </motion.div>
+                    <div className="text-white text-base sm:text-lg font-light">
+                      Small Class • Personal Attention
+                    </div>
+                    <div className="text-white/60 text-sm">
+                      Certificate of Mastery Included
+                    </div>
+                  </div>
 
-            {/* Right Info Card - 5 columns */}
-            <motion.div
-              className="lg:col-span-5 order-first lg:order-last"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 space-y-6 md:space-y-8">
-                {/* Instructor */}
-                <div className="flex items-center gap-4">
-                  <img
-                    src={masterClass.instructor.image}
-                    alt={masterClass.instructor.name}
-                    className="w-12 md:w-16 h-12 md:h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 className="text-lg font-medium text-white">
-                      {masterClass.instructor.name}
-                    </h3>
-                    <p className="text-white/60 text-sm">
-                      {masterClass.instructor.title}
-                    </p>
+                  {/* Rating */}
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 text-amber-400 fill-current"
+                        />
+                      ))}
+                    </div>
+                    <span className="text-white/60 text-sm">
+                      ({masterClass.reviews.length} reviews)
+                    </span>
                   </div>
-                </div>
 
-                {/* Limited Time Banner */}
-                <div className="bg-gradient-to-r from-red-500/20 to-pink-500/20 border border-red-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-red-400 font-medium text-sm mb-1">
-                    ⏰ LIMITED TIME OFFER
-                  </div>
-                  <div className="text-white text-lg font-light">
-                    Small Class • Personal Attention
-                  </div>
-                  <div className="text-white/60 text-sm">
-                    Certificate of Mastery Included
-                  </div>
-                </div>
-
-                {/* Rating */}
-                <div className="flex items-center justify-center gap-2">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 text-amber-400 fill-current"
-                      />
+                  {/* Quick highlights */}
+                  <div className="space-y-3">
+                    {[
+                      "30 hours of hands-on training",
+                      "Digital recipe collection included",
+                      "Practical assessments & feedback",
+                      "Private WhatsApp community access",
+                    ].map((highlight, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        <span className="text-white/80 text-sm">
+                          {highlight}
+                        </span>
+                      </div>
                     ))}
                   </div>
-                  <span className="text-white/60 text-sm">
-                    ({masterClass.reviews.length} reviews)
-                  </span>
                 </div>
-
-                {/* Quick highlights */}
-                <div className="space-y-3">
-                  {[
-                    "30 hours of hands-on training",
-                    "All ingredients & equipment included",
-                    "Take-home spice kit & recipes",
-                    "Lifetime community access",
-                  ].map((highlight, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <Check className="w-4 h-4 text-green-400" />
-                      <span className="text-white/80 text-sm">{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
         <motion.button
           onClick={() => scrollToSection(includedRef)}
-          className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 hover:text-white transition-colors duration-300 flex flex-col items-center gap-2"
+          className="relative z-50 mb-6 sm:mb-8 mx-auto text-white/60 hover:text-white transition-colors duration-300 flex flex-col items-center gap-2"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
@@ -686,27 +693,27 @@ const CulinaryMasterclass: React.FC = () => {
       {/* What's Included Section - Enhanced */}
       <section
         ref={includedRef}
-        className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white"
+        className="py-16 sm:py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white"
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
-            className="text-center mb-16 md:mb-20"
+            className="text-center mb-12 sm:mb-16 lg:mb-20"
             variants={containerVariants}
             initial="hidden"
             animate={includedInView ? "visible" : "hidden"}
           >
             <motion.div
-              className="w-16 h-px bg-amber-400 mx-auto mb-8"
+              className="w-16 h-px bg-amber-400 mx-auto mb-6 sm:mb-8"
               variants={itemVariants}
             />
             <motion.h2
-              className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 sm:mb-6 tracking-tight"
               variants={itemVariants}
             >
               Everything <span className="italic text-amber-600">Included</span>
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed"
+              className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed"
               variants={itemVariants}
             >
               Your complete culinary transformation package - no hidden costs,
@@ -715,7 +722,7 @@ const CulinaryMasterclass: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8"
             variants={containerVariants}
             initial="hidden"
             animate={includedInView ? "visible" : "hidden"}
@@ -723,7 +730,7 @@ const CulinaryMasterclass: React.FC = () => {
             {masterClass.included.map((item, index) => (
               <motion.div
                 key={index}
-                className={`group relative p-6 md:p-8 rounded-2xl transition-all duration-300 ${
+                className={`group relative p-6 sm:p-8 rounded-2xl transition-all duration-300 ${
                   item.highlight
                     ? "bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 hover:border-amber-300"
                     : "bg-white border border-gray-200 hover:border-gray-300 hover:shadow-lg"
@@ -747,10 +754,10 @@ const CulinaryMasterclass: React.FC = () => {
                   <item.icon className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-xl font-medium text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-xl font-medium text-gray-900 mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed font-light">
+                <p className="text-gray-600 leading-relaxed font-light text-sm sm:text-base">
                   {item.description}
                 </p>
               </motion.div>
@@ -759,7 +766,7 @@ const CulinaryMasterclass: React.FC = () => {
 
           {/* Summary Card */}
           <motion.div
-            className="mt-16 md:mt-20 max-w-4xl mx-auto bg-black rounded-3xl p-8 md:p-12 text-white"
+            className="mt-12 sm:mt-16 lg:mt-20 max-w-4xl mx-auto bg-black rounded-3xl p-6 sm:p-8 lg:p-12 text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={
               includedInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
@@ -767,21 +774,21 @@ const CulinaryMasterclass: React.FC = () => {
             transition={{ delay: 0.8 }}
           >
             <div className="text-center space-y-6">
-              <h3 className="text-3xl md:text-4xl font-light">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light">
                 Complete Package Value
               </h3>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+              <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-8">
                 <div className="text-center">
-                  <div className="text-2xl text-gray-400 line-through">
+                  <div className="text-xl sm:text-2xl text-gray-400 line-through">
                     ₦{masterClass.originalPrice.toLocaleString()}
                   </div>
                   <div className="text-sm text-gray-500">Regular Price</div>
                 </div>
-                <div className="text-6xl md:text-7xl font-light text-amber-400">
+                <div className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-amber-400">
                   ₦{masterClass.earlyBirdPrice.toLocaleString()}
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl text-green-400">
+                  <div className="text-xl sm:text-2xl text-green-400">
                     ₦
                     {(
                       masterClass.originalPrice - masterClass.earlyBirdPrice
@@ -790,7 +797,7 @@ const CulinaryMasterclass: React.FC = () => {
                   <div className="text-sm text-gray-500">You Save</div>
                 </div>
               </div>
-              <p className="text-white/80 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-white/80 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
                 Early bird pricing ends soon. Secure your spot in Nigeria&apos;s
                 most comprehensive culinary masterclass.
               </p>
@@ -800,36 +807,36 @@ const CulinaryMasterclass: React.FC = () => {
       </section>
 
       {/* Signature Dishes - Enhanced */}
-      <section ref={dishesRef} className="py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section ref={dishesRef} className="py-16 sm:py-20 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
-            className="text-center mb-16 md:mb-20"
+            className="text-center mb-12 sm:mb-16 lg:mb-20"
             variants={containerVariants}
             initial="hidden"
             animate={dishesInView ? "visible" : "hidden"}
           >
             <motion.div
-              className="w-16 h-px bg-amber-400 mx-auto mb-8"
+              className="w-16 h-px bg-amber-400 mx-auto mb-6 sm:mb-8"
               variants={itemVariants}
             />
             <motion.h2
-              className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 sm:mb-6 tracking-tight"
               variants={itemVariants}
             >
               Master These{" "}
               <span className="italic text-amber-600">Classics</span>
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed"
+              className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed"
               variants={itemVariants}
             >
               From foundational techniques to restaurant-quality presentation,
-              perfect these iconic Nigerian dishes
+              perfect these iconic dishes from around the world
             </motion.p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12"
             variants={containerVariants}
             initial="hidden"
             animate={dishesInView ? "visible" : "hidden"}
@@ -841,7 +848,7 @@ const CulinaryMasterclass: React.FC = () => {
                 variants={itemVariants}
                 onClick={() => setSelectedDish(dish)}
               >
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                     <img
                       src={dish.image}
@@ -850,32 +857,37 @@ const CulinaryMasterclass: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
 
-                    {/* Difficulty Badge */}
-                    <div
-                      className={`absolute top-4 md:top-6 left-4 md:left-6 px-3 py-1 rounded-full text-white text-xs font-medium ${
-                        dish.difficulty === "Beginner"
-                          ? "bg-green-500/90"
-                          : dish.difficulty === "Intermediate"
-                          ? "bg-amber-500/90"
-                          : "bg-red-500/90"
-                      }`}
-                    >
-                      {dish.difficulty}
+                    {/* Category & Difficulty Badges */}
+                    <div className="absolute top-4 sm:top-6 left-4 sm:left-6 flex flex-col gap-2">
+                      <div className="px-3 py-1 rounded-full bg-white/90 text-gray-800 text-xs font-medium">
+                        {dish.category}
+                      </div>
+                      <div
+                        className={`px-3 py-1 rounded-full text-white text-xs font-medium ${
+                          dish.difficulty === "Beginner"
+                            ? "bg-green-500/90"
+                            : dish.difficulty === "Intermediate"
+                            ? "bg-amber-500/90"
+                            : "bg-red-500/90"
+                        }`}
+                      >
+                        {dish.difficulty}
+                      </div>
                     </div>
 
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="bg-white/20 backdrop-blur-md rounded-full p-4">
-                        <Camera className="w-6 md:w-8 h-6 md:h-8 text-white" />
+                        <Camera className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <h3 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-amber-600 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-light text-gray-900 group-hover:text-amber-600 transition-colors duration-300">
                       {dish.name}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed font-light text-sm md:text-base">
+                    <p className="text-gray-600 leading-relaxed font-light text-sm sm:text-base">
                       {dish.description}
                     </p>
                   </div>
@@ -887,10 +899,13 @@ const CulinaryMasterclass: React.FC = () => {
       </section>
 
       {/* Meet Your Instructor - Enhanced */}
-      <section ref={instructorRef} className="py-20 md:py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section
+        ref={instructorRef}
+        className="py-16 sm:py-20 lg:py-32 bg-gray-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center"
             variants={containerVariants}
             initial="hidden"
             animate={instructorInView ? "visible" : "hidden"}
@@ -905,9 +920,9 @@ const CulinaryMasterclass: React.FC = () => {
                 />
 
                 {/* Floating Achievement */}
-                <div className="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 bg-white rounded-2xl p-4 md:p-6 shadow-2xl">
+                <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white rounded-2xl p-4 sm:p-6 shadow-2xl">
                   <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-light text-amber-600">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-light text-amber-600">
                       {masterClass.instructor.experience}
                     </div>
                     <div className="text-gray-600 text-sm font-medium">
@@ -916,14 +931,14 @@ const CulinaryMasterclass: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="absolute -top-4 md:-top-6 -left-4 md:-left-6 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-2xl p-4 md:p-6 shadow-2xl">
+                <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-2xl p-4 sm:p-6 shadow-2xl">
                   <div className="flex items-center gap-2">
-                    <Trophy className="w-5 md:w-6 h-5 md:h-6" />
+                    <Trophy className="w-5 sm:w-6 h-5 sm:h-6" />
                     <div>
-                      <div className="font-bold text-sm md:text-base">
+                      <div className="font-bold text-sm sm:text-base">
                         Award Winner
                       </div>
-                      <div className="text-xs md:text-sm opacity-90">
+                      <div className="text-xs sm:text-sm opacity-90">
                         2023 Excellence
                       </div>
                     </div>
@@ -934,29 +949,29 @@ const CulinaryMasterclass: React.FC = () => {
 
             {/* Content - 7 columns */}
             <motion.div
-              className="lg:col-span-7 space-y-6 md:space-y-8"
+              className="lg:col-span-7 space-y-6 sm:space-y-8"
               variants={itemVariants}
             >
-              <div className="space-y-4 md:space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <div className="w-16 h-px bg-amber-400" />
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 tracking-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 tracking-tight">
                   Meet Your <span className="italic text-amber-600">Chef</span>
                 </h2>
                 <div className="space-y-2">
-                  <div className="text-xl md:text-2xl font-light text-amber-600">
+                  <div className="text-xl sm:text-2xl font-light text-amber-600">
                     {masterClass.instructor.name}
                   </div>
                   <div className="text-lg text-gray-600 font-light">
                     {masterClass.instructor.title}
                   </div>
                 </div>
-                <p className="text-lg text-gray-700 leading-relaxed font-light max-w-2xl">
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light max-w-2xl">
                   {masterClass.instructor.bio}
                 </p>
               </div>
 
               {/* Specialties & Awards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                 <div>
                   <h3 className="text-lg font-medium text-gray-900 mb-4">
                     Specialties
@@ -966,7 +981,7 @@ const CulinaryMasterclass: React.FC = () => {
                       (specialty, index) => (
                         <div key={index} className="flex items-center gap-3">
                           <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                          <span className="text-gray-700 font-light">
+                          <span className="text-gray-700 font-light text-sm sm:text-base">
                             {specialty}
                           </span>
                         </div>
@@ -982,7 +997,7 @@ const CulinaryMasterclass: React.FC = () => {
                   <div className="space-y-3">
                     {masterClass.instructor.awards.map((award, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <Award className="w-4 h-4 text-amber-500 mt-1" />
+                        <Award className="w-4 h-4 text-amber-500 mt-1 flex-shrink-0" />
                         <span className="text-gray-700 font-light text-sm">
                           {award}
                         </span>
@@ -997,19 +1012,19 @@ const CulinaryMasterclass: React.FC = () => {
       </section>
 
       {/* Student Reviews */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-16 md:mb-20">
-            <div className="w-16 h-px bg-amber-400 mx-auto mb-8" />
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+      <section className="py-16 sm:py-20 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <div className="w-16 h-px bg-amber-400 mx-auto mb-6 sm:mb-8" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 sm:mb-6 tracking-tight">
               Student <span className="italic text-amber-600">Success</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-light">
               Real transformations from real students
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             {masterClass.reviews.map((review, index) => (
               <motion.div
                 key={review.name}
@@ -1027,7 +1042,7 @@ const CulinaryMasterclass: React.FC = () => {
                   ))}
                 </div>
 
-                <blockquote className="text-lg text-gray-700 leading-relaxed font-light italic">
+                <blockquote className="text-base sm:text-lg text-gray-700 leading-relaxed font-light italic">
                   &quot;{review.review}&quot;
                 </blockquote>
 
@@ -1035,7 +1050,7 @@ const CulinaryMasterclass: React.FC = () => {
                   <img
                     src={review.image}
                     alt={review.name}
-                    className="w-12 h-12 rounded-full"
+                    className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
                     <div className="font-medium text-gray-900">
@@ -1051,10 +1066,10 @@ const CulinaryMasterclass: React.FC = () => {
       </section>
 
       {/* Final CTA - Enhanced */}
-      <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-32 bg-black text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="grid grid-cols-8 md:grid-cols-12 gap-4 h-full">
+          <div className="grid grid-cols-8 sm:grid-cols-12 gap-4 h-full">
             {[...Array(48)].map((_, i) => (
               <motion.div
                 key={i}
@@ -1070,22 +1085,22 @@ const CulinaryMasterclass: React.FC = () => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto text-center px-6 md:px-12 relative z-10 space-y-8 md:space-y-12">
-          <div className="space-y-6 md:space-y-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-12 relative z-10 space-y-8 sm:space-y-12">
+          <div className="space-y-6 sm:space-y-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight">
               Transform Your{" "}
               <span className="italic text-amber-400">Culinary Skills</span>
             </h2>
 
-            <p className="text-xl text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
               Join Nigeria&apos;s most exclusive culinary masterclass. Only{" "}
               {masterClass.maxStudents - masterClass.currentStudents} spots
               remaining.
             </p>
           </div>
 
-          <div className="space-y-4 md:space-y-6">
-            <div className="text-5xl md:text-6xl font-light">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-light">
               ₦{masterClass.earlyBirdPrice.toLocaleString()}
             </div>
             <div className="text-white/60">
@@ -1096,20 +1111,20 @@ const CulinaryMasterclass: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <button
               onClick={() => setShowEnrollment(true)}
-              className="px-8 md:px-12 py-4 md:py-6 bg-white text-black hover:bg-amber-400 transition-colors duration-300 rounded-full font-medium text-lg w-full sm:w-auto"
+              className="px-8 sm:px-12 py-4 sm:py-6 bg-white text-black hover:bg-amber-400 transition-colors duration-300 rounded-full font-medium text-lg w-full sm:w-auto"
             >
               Secure Your Spot
             </button>
 
             <button
               onClick={() => setShowBookVisit(true)}
-              className="px-8 md:px-12 py-4 md:py-6 border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 rounded-full font-medium text-lg w-full sm:w-auto"
+              className="px-8 sm:px-12 py-4 sm:py-6 border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 rounded-full font-medium text-lg w-full sm:w-auto"
             >
               Book a Visit First
             </button>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 pt-6 md:pt-8 text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 pt-6 sm:pt-8 text-sm">
             <div className="flex items-center gap-2">
               <Users className="w-5 h-5" />
               <span>Small Class Size</span>
@@ -1147,11 +1162,11 @@ const CulinaryMasterclass: React.FC = () => {
               className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-6 md:p-8 space-y-6 md:space-y-8">
+              <div className="p-6 sm:p-8 space-y-6 sm:space-y-8">
                 {/* Header */}
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-light text-gray-900">
+                    <h3 className="text-2xl sm:text-3xl font-light text-gray-900">
                       Enroll in Masterclass
                     </h3>
                     <div className="flex items-center gap-4 mt-2">
@@ -1205,7 +1220,7 @@ const CulinaryMasterclass: React.FC = () => {
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="block text-sm font-medium text-gray-700">
                           Full Name *
@@ -1308,7 +1323,7 @@ const CulinaryMasterclass: React.FC = () => {
                         <img
                           src={masterClass.instructor.image}
                           alt={masterClass.instructor.name}
-                          className="w-16 h-16 rounded-full"
+                          className="w-16 h-16 rounded-full object-cover"
                         />
                         <div className="flex-1">
                           <h5 className="font-medium text-lg">
@@ -1323,7 +1338,7 @@ const CulinaryMasterclass: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-gray-200">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-gray-200">
                         <div className="text-center">
                           <div className="font-medium text-amber-600">
                             {masterClass.duration}
@@ -1357,7 +1372,7 @@ const CulinaryMasterclass: React.FC = () => {
                     </div>
 
                     <div className="text-center space-y-4 bg-gray-50 rounded-2xl p-6">
-                      <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+                      <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                         <div className="text-center">
                           <div className="text-2xl text-gray-400 line-through">
                             ₦{masterClass.originalPrice.toLocaleString()}
@@ -1366,7 +1381,7 @@ const CulinaryMasterclass: React.FC = () => {
                             Regular Price
                           </div>
                         </div>
-                        <ArrowRight className="w-6 h-6 text-gray-400 hidden md:block" />
+                        <ArrowRight className="w-6 h-6 text-gray-400 hidden sm:block" />
                         <div className="text-center">
                           <div className="text-4xl font-light text-green-600">
                             ₦{masterClass.earlyBirdPrice.toLocaleString()}
@@ -1403,7 +1418,7 @@ const CulinaryMasterclass: React.FC = () => {
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <button
                         onClick={() =>
                           setEnrollmentData({
@@ -1452,10 +1467,10 @@ const CulinaryMasterclass: React.FC = () => {
 
                     <div className="bg-amber-50 rounded-2xl p-6 border border-amber-200">
                       <h5 className="font-medium mb-4 flex items-center gap-2">
-                        <Gift className="w-5 h-5 text-amber-600" />
+                        <Check className="w-5 h-5 text-amber-600" />
                         What&apos;s Included in Your Package:
                       </h5>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {masterClass.included.slice(0, 6).map((item, index) => (
                           <div key={index} className="flex items-start gap-2">
                             <Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
@@ -1543,11 +1558,11 @@ const CulinaryMasterclass: React.FC = () => {
               className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-6 md:p-8 space-y-6 md:space-y-8">
+              <div className="p-6 sm:p-8 space-y-6 sm:space-y-8">
                 {/* Header */}
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-light text-gray-900">
+                    <h3 className="text-2xl sm:text-3xl font-light text-gray-900">
                       Book a Studio Visit
                     </h3>
                     <p className="text-gray-600 mt-2">
@@ -1583,7 +1598,7 @@ const CulinaryMasterclass: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Full Name *
@@ -1647,7 +1662,7 @@ const CulinaryMasterclass: React.FC = () => {
                       required
                     />
                   </div>
-                  <div className="space-y-2 md:col-span-2">
+                  <div className="space-y-2 sm:col-span-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Preferred Time
                     </label>
@@ -1673,7 +1688,7 @@ const CulinaryMasterclass: React.FC = () => {
                       </option>
                     </select>
                   </div>
-                  <div className="space-y-2 md:col-span-2">
+                  <div className="space-y-2 sm:col-span-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Message (Optional)
                     </label>
@@ -1699,8 +1714,7 @@ const CulinaryMasterclass: React.FC = () => {
                       <strong>Duration:</strong> 45-60 minutes
                     </p>
                     <p>
-                      <strong>Location:</strong> Road 4, Royal Estate, Port
-                      Harcourt
+                      <strong>Location:</strong> SARS Road, Port Harcourt
                     </p>
                     <p>
                       <strong>What to bring:</strong> Just yourself and your
@@ -1817,22 +1831,27 @@ const CulinaryMasterclass: React.FC = () => {
                 >
                   <X className="w-6 h-6" />
                 </button>
-                <div
-                  className={`absolute top-4 left-4 px-3 py-1 rounded-full text-white text-sm font-medium ${
-                    selectedDish.difficulty === "Beginner"
-                      ? "bg-green-500"
-                      : selectedDish.difficulty === "Intermediate"
-                      ? "bg-amber-500"
-                      : "bg-red-500"
-                  }`}
-                >
-                  {selectedDish.difficulty}
+                <div className="absolute top-4 left-4 flex flex-col gap-2">
+                  <div className="px-3 py-1 rounded-full bg-white/90 text-gray-800 text-sm font-medium">
+                    {selectedDish.category}
+                  </div>
+                  <div
+                    className={`px-3 py-1 rounded-full text-white text-sm font-medium ${
+                      selectedDish.difficulty === "Beginner"
+                        ? "bg-green-500"
+                        : selectedDish.difficulty === "Intermediate"
+                        ? "bg-amber-500"
+                        : "bg-red-500"
+                    }`}
+                  >
+                    {selectedDish.difficulty}
+                  </div>
                 </div>
               </div>
 
-              <div className="p-6 md:p-8 space-y-6">
+              <div className="p-6 sm:p-8 space-y-6">
                 <div className="space-y-3">
-                  <h3 className="text-2xl md:text-3xl font-light text-gray-900">
+                  <h3 className="text-2xl sm:text-3xl font-light text-gray-900">
                     {selectedDish.name}
                   </h3>
                   <p className="text-lg text-gray-700 leading-relaxed font-light">
